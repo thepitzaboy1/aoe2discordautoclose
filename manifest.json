@@ -1,9 +1,24 @@
 {
   "manifest_version": 3,
   "name": "AoE2 Redirect Auto Close",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Closes AoE2 Join/Spectate redirect tabs after 10 seconds.",
-  "host_permissions": ["https://palladrium.github.io/AoE2-join-redirect/*"],
-  "content_scripts": [{"matches": ["https://palladrium.github.io/AoE2-join-redirect/*"], "js": ["redirect.js"], "run_at": "document_idle", "all_frames": false}],
-  "background": {"service_worker": "background.js"}
+  "host_permissions": [
+    "https://palladrium.github.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://palladrium.github.io/AoE2-join-redirect/*"
+      ],
+      "js": [
+        "redirect.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
 }
